@@ -1,5 +1,5 @@
 # Etab图床
-Free Image Hosting solution, Flickr/imgur alternative. Using Cloudflare Pages and Telegraph.
+Free Image Hosting solution, Flickr/imgur alternative. Using Cloudflare Pages.
 
 English|[中文](readme-zh.md)
 
@@ -44,7 +44,7 @@ When image review is enabled, the first time image load will be slow because it 
 ![3](https://Etab图床.pages.dev/file/bae511fb116b034ef9c14.png)
 
 ### Limitations
-1. Since the image files are actually stored in Telegraph, Telegraph limits the size of uploaded images to a maximum of 5MB
+1. Since the image files are actually stored in limits the size of uploaded images to a maximum of 5MB
 
 2. Due to the use of Cloudflare's network, the loading speed of images may not be guaranteed in some areas.
 
