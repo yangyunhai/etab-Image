@@ -1,4 +1,4 @@
-# Telegraph-Image
+# Etab图床
 免费图片托管解决方案，Flickr/imgur替代品。使用Cloudflare Pages和Telegraph。
 
 [English](README-EN.md)|中文
@@ -6,15 +6,15 @@
 ## 如何部署
 
 ### 提前准备
-你唯一需要提前准备的就是一个Cloudflare账户 （如果需要在自己的服务器上部署，不依赖Cloudflare，可参考[#46](https://github.com/cf-pages/Telegraph-Image/issues/46) ）
+你唯一需要提前准备的就是一个Cloudflare账户 （如果需要在自己的服务器上部署，不依赖Cloudflare，可参考[#46](https://github.com/cf-pages/Etab图床/issues/46) ）
 
 ### 手把手教程
 简单3步，即可部署本项目，拥有自己的图床
 
-1.下载或Fork本仓库 (注意：目前请使用fork，在使用下载[#14](https://github.com/cf-pages/Telegraph-Image/issues/14)部署存在问题)
+1.下载或Fork本仓库 (注意：目前请使用fork，在使用下载[#14](https://github.com/cf-pages/Etab图床/issues/14)部署存在问题)
 
 2.打开Cloudflare Dashboard，进入Pages管理页面，选择创建项目，如果在第一步中选择的是fork本仓库，则选择`连接到 Git 提供程序`，如果第一步中选择的是下载本仓库则选择`直接上传`
-![1](https://telegraph-image.pages.dev/file/8d4ef9b7761a25821d9c2.png)
+![1](https://Etab图床.pages.dev/file/8d4ef9b7761a25821d9c2.png)
 
 3. 按照页面提示输入项目名称，选择需要连接的git仓库（第一步选择的是fork）或是上传刚刚下载的仓库文件（第一步选择的是下载本仓库），点击`部署站点`即可完成部署
 
@@ -31,7 +31,7 @@
 
 ### 绑定自定义域名
 在pages的自定义域里面，绑定cloudflare中存在的域名，在cloudflare托管的域名，自动会修改dns记录
-![2](https://telegraph-image.pages.dev/file/29546e3a7465a01281ee2.png)
+![2](https://Etab图床.pages.dev/file/29546e3a7465a01281ee2.png)
 
 ### 开启图片审查
 1.请前往https://moderatecontent.com/ 注册并获得一个免费的用于审查图像内容的API key
@@ -43,7 +43,7 @@
 注意：由于所做的更改将在下次部署时生效，你或许还需要进入`部署`页面，重新部署一下该本项目
 
 开启图片审查后，因为审查需要时间，首次的图片加载将会变得缓慢，之后的图片加载由于存在缓存，并不会受到影响
-![3](https://telegraph-image.pages.dev/file/bae511fb116b034ef9c14.png)
+![3](https://Etab图床.pages.dev/file/bae511fb116b034ef9c14.png)
 
 ### 限制
 1.由于图片文件实际存储于Telegraph，Telegraph限制上传的图片大小最大为5MB
