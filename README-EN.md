@@ -1,4 +1,4 @@
-# Telegraph-Image
+# etab-oss
 Free Image Hosting solution, Flickr/imgur alternative. Using Cloudflare Pages and Telegraph.
 
 English|[中文](readme-zh.md)

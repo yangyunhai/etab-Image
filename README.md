@@ -1,4 +1,4 @@
-# Telegraph-Image
+# etab-oss
 免费图片托管解决方案，Flickr/imgur替代品。使用Cloudflare Pages和Telegraph。
 
 [English](README-EN.md)|中文
