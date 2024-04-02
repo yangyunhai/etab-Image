@@ -1,5 +1,5 @@
-let dataCacheName = 'new-data-21212'
-let cacheName = 'first-pwa-app-1212'
+let dataCacheName = 'new-data-202404022'
+let cacheName = 'first-pwa-app-202404022'
 let filesToCache = [
   '/',
   '/index.html'
