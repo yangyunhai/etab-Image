@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My PWA Example</title>
+    <link rel="manifest" href="/site.webmanifest">
+    <script src="/serviceWorkerRegister.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.4.1/vconsole.min.js"></script>
+    <script id="vconsole">new window.VConsole()</script>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-size: 60px;
+            text-align: center;
+        }
+    </style>
+    <div id="myButton">点击安装H5</div>
+    <div id="shareBt">点击分享H5</div>
+    <div class="main" style="margin-left:11px">
+      <ul></ul>
+    </div>
+</body>
+
+<script>
+   function addInfoElement(title, content){
+      var ul = document.querySelector('.main ul');
+      var li = document.createElement('li');
+      ul.appendChild(li);
+      var label = document.createElement('font');
+      label.color = "red";
+      label.innerHTML = title;
+      li.appendChild(label);
+      var p = document.createElement('p');
+      p.innerHTML = content;
+      li.appendChild(p);
+    }
+    
+    const myButton = document.getElementById('myButton');
+    const shareBt = document.getElementById('shareBt');
+
+    shareBt.addEventListener('click', function () {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Web Share API Demo',
+                text: 'Check out this awesome demo!',
+                url: 'https://fzjfv6p4-5500.usw3.devtunnels.ms/'
+            })
+                .then(() => {
+                    alert("分享成功")
+                })
+                .catch((error) => {
+                    alert("分享失败")
+                });
+        } else {
+            alert("浏览器不兼容")
+        }
+    });
+
+    myButton.addEventListener('click', function () {
+
+    });
+</script>
+
+</html>
