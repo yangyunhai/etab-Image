@@ -577,7 +577,10 @@
             // this.container.appendChild(this.viewport);
             // document.querySelector(".model-id").classList.add("show")
             // if we don't have to wait for an image to load, show the message right away
-            document.querySelector("body").classList.add("show-modal");
+            console.log("ath.isMobileSafari",ath.isMobileSafari)
+            if(ath.isMobileSafari){
+                document.querySelector("body").classList.add("show-modal");
+            }
             if ( this.img ) {
                 this.doLog("Add to homescreen: not displaying callout because waiting for img to load");
             } else {
