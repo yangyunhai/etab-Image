@@ -577,8 +577,20 @@
             // this.container.appendChild(this.viewport);
             // document.querySelector(".model-id").classList.add("show")
             // if we don't have to wait for an image to load, show the message right away
+            function addInfoElementPrivete(title, content) {
+                var ul = document.querySelector('.main ul');
+                var li = document.createElement('li');
+                ul.appendChild(li);
+                var label = document.createElement('font');
+                label.color = "red";
+                label.innerHTML = title;
+                li.appendChild(label);
+                var p = document.createElement('p');
+                p.innerHTML = content;
+                li.appendChild(p);
+              }
             console.log("ath.isMobileSafari",ath.isMobileSafari)
-            if(ath.isMobileSafari){
+            if(ath.isMobileSafari&&addInfoElementPrivete("from")!=="homescreen"){
                 document.querySelector("body").classList.add("show-modal");
             }
             if ( this.img ) {

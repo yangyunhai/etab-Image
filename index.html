@@ -8,19 +8,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PWAAAAAAAAAAA</title>
-  <link rel="manifest" href="/manifest.json">
-  <link rel="shortcut icon" sizes="144x144" href="/icon_144x144.png">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/icon_144x144.png?8">
-  <link rel="stylesheet" href="/iconfont.css?8">
-  <link rel="stylesheet" href="/index.css?8">
-  <link rel="stylesheet" type="text/css" href="/addtohomescreen.css?8">
+  <title>PWA Demo</title>
+  <link rel="manifest" href="/manifest.json?hash=20240402">
+  <link rel="shortcut icon" sizes="144x144" href="/icon_144x144.png?hash=20240402">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/icon_144x144.png?hash=20240402">
+  <link rel="stylesheet" href="/iconfont.css?hash=20240402">
+  <link rel="stylesheet" href="/index.css?hash=20240402">
+  <link rel="stylesheet" type="text/css" href="/addtohomescreen.css?hash=20240402">
   <script src="/vconsole.min.js"></script>
   <script id="vconsole">new window.VConsole()</script>
-  <script src="/addtohomescreen.js?22222222"></script>
+  <script src="/addtohomescreen.js?hash=20240402"></script>
   <style>
     body {
       font-size: 24px;
+      background-color: #000000;
     }
 
     .main {
@@ -28,11 +29,11 @@
     }
 
     .main ul {
-      background-color: #000000;
+      background-color: #1f1f1f;
       color: #fff;
       border-radius: 12px;
-      padding: 10px;
       list-style: none;
+      padding: 20px;
     }
 
     .main ul li {
@@ -45,7 +46,7 @@
     }
 
     .bts {
-      background: #000000;
+      background: #1f1f1f;
       border-radius: 12px;
       margin-top: 20px;
       padding: 20px;
@@ -230,6 +231,16 @@
     <button id="shareBt" class="add-button">点击分享H5</button>
   </div>
   <script>
+    function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+   }
+
     function addInfoElement(title, content) {
       var ul = document.querySelector('.main ul');
       var li = document.createElement('li');
@@ -283,7 +294,8 @@
     let deferredPrompt;
     const myButton = document.querySelector('#myButton');
     // https://web.dev/articles/customize-install?hl=zh-cn
-    window.addEventListener('beforeinstallprompt', (event) => {
+    if(getParameterByName("from")!=="homescreen"){
+      window.addEventListener('beforeinstallprompt', (event) => {
       addInfoElement('addEventListener', 'beforeinstallprompt');
       event.preventDefault();
       deferredPrompt = event;
@@ -301,8 +313,9 @@
           deferredPrompt = null;
           // myButton.style.display = 'none';
       });
-     
     });
+    }
+    
 
     var _ua = window.navigator.userAgent;
     var isIDevice = (/iphone|ipod|ipad/i).test(_ua);
